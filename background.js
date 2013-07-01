@@ -49,7 +49,7 @@
 		xhr.onerror = xhr.onabort = xhr.ontimeout = function(){
 			scheduleNextPoll(5);
 		};
-		xhr.open('GET', 'https://api.github.com/notifications?access_token=' + auth.getAccessToken() + '&_=' + Math.round(+new Date()/1000), true);
+		xhr.open('GET', 'https://api.github.com/notifications?participating=true&access_token=' + auth.getAccessToken() + '&_=' + Math.round(+new Date()/1000), true);
 		xhr.send();
 	};
 
